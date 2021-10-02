@@ -30,9 +30,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
              .font: UIFont(name: "Times New Roman",
                            // フォントサイズ
                            size: 27)!]
-
-        // ナビゲーションバーの背景色
-        //UINavigationBar.appearance().barTintColor = UIColor.red
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
