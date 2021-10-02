@@ -21,18 +21,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // 全てのNavigationControllerのそれぞれの色を変更する場合ここに書く
         // 個別に色を変えたい場合、そのViewControllerにコードを書くことで個別に色を変えられる
         // ナビゲージョンアイテムの文字色
-        UINavigationBar.appearance().tintColor = UIColor.yellow
+        UINavigationBar.appearance().tintColor = UIColor.red
 
         UINavigationBar.appearance().titleTextAttributes =
             // ナビゲーションバーのタイトルの文字色
-            [.foregroundColor: UIColor.white,
+            [.foregroundColor: UIColor.blue,
              // フォントの種類
              .font: UIFont(name: "Times New Roman",
                            // フォントサイズ
                            size: 27)!]
 
         // ナビゲーションバーの背景色
-        UINavigationBar.appearance().barTintColor = UIColor.red
+        //UINavigationBar.appearance().barTintColor = UIColor.red
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
