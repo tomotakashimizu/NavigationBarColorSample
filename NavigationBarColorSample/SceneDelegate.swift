@@ -22,14 +22,33 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // 個別に色を変えたい場合、そのViewControllerにコードを書くことで個別に色を変えられる
         // ナビゲージョンアイテムの文字色
         UINavigationBar.appearance().tintColor = UIColor.red
-
-        UINavigationBar.appearance().titleTextAttributes =
+        
+        if #available(iOS 15.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = UIColor.green
+            appearance.titleTextAttributes =
             // ナビゲーションバーのタイトルの文字色
             [.foregroundColor: UIColor.blue,
              // フォントの種類
              .font: UIFont(name: "Times New Roman",
                            // フォントサイズ
                            size: 27)!]
+            UINavigationBar.appearance().standardAppearance = appearance
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+            
+        } else {
+            // ナビゲーションバーの背景色
+            UINavigationBar.appearance().barTintColor = UIColor.green
+            
+            UINavigationBar.appearance().titleTextAttributes =
+            // ナビゲーションバーのタイトルの文字色
+            [.foregroundColor: UIColor.blue,
+             // フォントの種類
+             .font: UIFont(name: "Times New Roman",
+                           // フォントサイズ
+                           size: 27)!]
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
